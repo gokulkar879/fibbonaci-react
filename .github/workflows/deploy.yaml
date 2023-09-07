@@ -14,4 +14,4 @@ jobs:
         working-directory:
           ./client
         run: docker build -t g0karki/react-test -f Dockerfile.dev .
-        run: docker run -e CI=true g0karki/react-test npm test
+      - run: docker run -e CI=true g0karki/react-test npm test
