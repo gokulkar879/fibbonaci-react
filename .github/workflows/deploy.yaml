@@ -9,5 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t g0karki/react-test -f ./client/Dockerfile.dev .
+
+      - name: Build dev docker image
+        with:
+          context: ./client
+          file: ./client/Dockerfile.dev
+        run: docker build -t g0karki/react-test -f Dockerfile.dev .
       - run: docker run -e CI=true g0karki/react-test npm run test
