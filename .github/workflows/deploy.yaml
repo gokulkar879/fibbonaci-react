@@ -12,4 +12,4 @@ jobs:
 
       - name: build and test docker image
         working-directory: ./client
-        run: docker build -t g0karki/react-test -f ./client/Dockerfile.dev .
+        run: docker build -t g0karki/react-test -f Dockerfile.dev .
